@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OneTimeTransferComponent } from './one-time-transfer.component';
-import { ReactiveFormsModule } from '@angular/forms/';
+import { NgModule } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms/';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [
-    OneTimeTransferComponent
-  ],
   imports: [
     CommonModule,
+    BrowserModule,
     ReactiveFormsModule
   ],
+  providers: [
+    FormBuilder
+  ],
   exports: [
-    OneTimeTransferComponent
+    ReactiveFormsModule
   ]
 })
 export class OneTimeTransferModule { }

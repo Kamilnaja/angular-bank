@@ -1,8 +1,13 @@
-<div class="col-6">
-  <form [formGroup]="transferGroup">
-    <div class="form-group">
-      <label for="receiver">Nazwa odbiorcy</label>
-      <input type="text" name="receiver" id="receiver">
-    </div>
-  </form>
-</div>
+<form [formGroup]="profileForm">
+
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+</form>

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { HistoryComponent } from './history/history.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
-import { OneTimeTransferComponent } from './transfer/one-time-transfer/one-time-transfer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +13,12 @@ import { OneTimeTransferComponent } from './transfer/one-time-transfer/one-time-
     MainNavbarComponent,
     HistoryComponent,
     DesktopComponent,
-    OneTimeTransferComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
