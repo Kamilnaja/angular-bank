@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface MenuItem {
-  name: string;
-  route: string;
-}
+import { MenuItem } from '../interfaces/MenuItem.interface';
 
 @Component({
   templateUrl: './transfer.component.html',
