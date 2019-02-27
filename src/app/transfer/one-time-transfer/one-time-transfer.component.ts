@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-one-time-transfer',
   templateUrl: './one-time-transfer.component.html',
   styleUrls: ['./one-time-transfer.component.css']
 })
 export class OneTimeTransferComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private fb: FormBuilder) { }
+  transferGroup = this.fb.group({
+    receiverName: ['']
+  });
   ngOnInit() {
   }
 

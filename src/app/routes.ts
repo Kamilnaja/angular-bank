@@ -1,15 +1,17 @@
 import { Routes } from '@angular/router';
-import { TransferComponent } from './transfer/transfer.component';
-import { HistoryComponent } from './history/history.component';
 import { DesktopComponent } from './desktop/desktop.component';
-import { OneTimeTransferComponent } from './transfer/one-time-transfer/one-time-transfer.component';
-import { transferRoutes } from './transfer/transfer.routes';
+import { HistoryComponent } from './history/history.component';
 
 export const routes: Routes = [
-    { path: 'pulpit', component: DesktopComponent },
     {
-        path: 'przelew', component: TransferComponent,
-        children: transferRoutes
+        path: 'pulpit',
+        component: DesktopComponent
     },
-    { path: 'historia', component: HistoryComponent }
+    {
+        path: 'przelew',
+        loadChildren: './transfer/transfer.module#TransferModule'
+    },
+    {
+        path: 'historia', component: HistoryComponent
+    }
 ];
