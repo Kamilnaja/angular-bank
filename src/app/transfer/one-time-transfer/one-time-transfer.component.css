@@ -1,18 +1,21 @@
-/* .toAccountWrapper:before {
-  position: absolute;
-  content: '?';
+.customTooltip {
+  position: relative;
   border: 1px solid grey;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   padding: 10px;
   line-height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  display: inline-block;
   font-size: 12px;
   font-weight: bold;
   color: grey;
-  right: -7px;
-  top: 14px;
-} */
+  vertical-align: middle;
+}
+
+.customTooltip:hover {
+  background-color: grey;
+  color: white;
+}
+

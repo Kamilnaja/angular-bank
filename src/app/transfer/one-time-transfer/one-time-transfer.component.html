@@ -1,9 +1,10 @@
 <form [formGroup]="transferForm" (ngSubmit)="handleSubmit()">
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label" for="receiverName">
+    <label class="col-md-2 col-form-label tooltip-wrapper" for="receiverName">
       Nazwa odbiorcy
+      <span appTooltip [info]="'Dane osoby, do której zostanie wysłany przelew'">?</span>
     </label>
-    <div class="col-sm-10">
+    <div class="col-md-10">
       <input type="text" class="form-control" formControlName="receiverName" id="receiverName">
     </div>
   </div>
