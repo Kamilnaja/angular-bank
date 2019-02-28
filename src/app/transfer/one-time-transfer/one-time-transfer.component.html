@@ -1,13 +1,51 @@
-<form [formGroup]="profileForm">
-
+<form [formGroup]="transferForm" (submit)="handleSubmit()">
+  <div class="form-group">
+    <label>
+      Nazwa odbiorcy
+      <input type="text" formControlName="receiverName">
+    </label>
+  </div>
+  <div class="form-group">
   <label>
-    First Name:
-    <input type="text" formControlName="firstName">
+    Z rachunku
+    <input type="text" formControlName="fromAccount">
   </label>
-
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
-  </label>
-
+  </div>
+  <div class="form-group">
+    <label>
+      Na rachunek
+      <input type="text" formControlName="toAccount">
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Kwota
+      <input type="number" formControlName="amount">
+    </label>
+  </div>
+    <div class="form-group">
+      <label>
+        Tytuł przelewu
+        <input type="text" formControlName="amount">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        Data przelewu
+        <input type="text" formControlName="realizationDate">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        Rodzaj przelewu
+        <input type="text" formControlName="transferType">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        Opcje dodatkowe
+        <input type="text" formControlName="additionalOptions">
+      </label>
+    </div>
+    <button type="submit">Wyślij</button>
 </form>
