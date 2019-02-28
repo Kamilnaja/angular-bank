@@ -1,10 +1,10 @@
 <form [formGroup]="transferForm" (ngSubmit)="handleSubmit()">
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label">
+    <label class="col-sm-2 col-form-label" for="receiverName">
       Nazwa odbiorcy
     </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" formControlName="receiverName">
+      <input type="text" class="form-control" formControlName="receiverName" id="receiverName">
     </div>
   </div>
   <div class="row">
@@ -13,45 +13,45 @@
     </div>
     <div class="col-9">
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Z rachunku</label>
+        <label class="col-sm-2 col-form-label" for="fromAccount">Z rachunku</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="fromAccount">
+          <input type="text" class="form-control" formControlName="fromAccount" id="fromAccount">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Na rachunek</label>
+        <label class="col-sm-2 col-form-label" for="toAccount">Na rachunek</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="toAccount">
+          <input type="text" class="form-control" formControlName="toAccount" id="toAccount">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Kwota</label>
+        <label class="col-sm-2 col-form-label" for="amount">Kwota</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" formControlName="amount">
+          <input type="number" class="form-control" formControlName="amount" id="amount">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Tytuł przelewu</label>
+        <label class="col-sm-2 col-form-label" for="transferTitle">Tytuł przelewu</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="amount">
+          <input type="text" class="form-control" formControlName="transferTitle" id="transferTitle">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Data przelewu</label>
+        <label class="col-sm-2 col-form-label" for="realizationDate">Data przelewu</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="realizationDate">
+          <input type="text" class="form-control" formControlName="realizationDate" id="realizationDate">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Rodzaj przelewu</label>
+        <label class="col-sm-2 col-form-label" for="transferType">Rodzaj przelewu</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="transferType">
+          <input type="text" class="form-control" formControlName="transferType" id="transferType">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Opcje dodatkowe</label>
+        <label class="col-sm-2 col-form-label" for="additionalOptions">Opcje dodatkowe</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" formControlName="additionalOptions">
+          <input type="text" class="form-control" formControlName="additionalOptions" id="additionalOptions">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Wyślij</button>

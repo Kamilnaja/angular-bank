@@ -6,6 +6,7 @@ import { DesktopComponent } from './desktop/desktop.component';
 import { HistoryComponent } from './history/history.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TooltipDirective } from './tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainNavbarComponent,
     HistoryComponent,
     DesktopComponent,
+    TooltipDirective,
   ],
   imports: [
     BrowserModule,
