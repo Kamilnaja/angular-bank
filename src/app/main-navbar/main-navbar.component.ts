@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from '../interfaces/MenuItem.interface';
 
 @Component({
   selector: 'app-main-navbar',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-navbar.component.css']
 })
 export class MainNavbarComponent implements OnInit {
-  menuItems: string[] = ['pulpit', 'przelew', 'historia'];
+  menuItems: MenuItem[] = [
+    { name: 'pulpit', route: 'pulpit' },
+    { name: 'przelew', route: 'przelew' },
+    { name: 'historia', route: 'historia' }
+  ];
+
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

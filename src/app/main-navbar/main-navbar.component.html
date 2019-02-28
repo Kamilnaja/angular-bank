@@ -1,7 +1,7 @@
 <ul class="list-inline">
   <li *ngFor="let item of menuItems" class="list-inline-item mt-1">
-    <a [routerLink]="item" routerLinkActive="link-active">
-      {{item | uppercase}}
+    <a [routerLink]="item.route" routerLinkActive="link-active">
+      {{item.name | uppercase}}
     </a>
   </li>
 </ul>
