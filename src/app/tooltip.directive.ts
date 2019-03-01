@@ -25,7 +25,5 @@ export class TooltipDirective {
         this.isVisible = false;
       }, 1000);
     }
-
-
   }
 }
