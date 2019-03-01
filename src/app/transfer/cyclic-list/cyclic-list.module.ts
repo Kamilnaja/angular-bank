@@ -1,23 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CyclicTransferComponent} from './cyclic-transfer.component';
+import {CyclicListComponent} from './cyclic-list.component';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [{
-  path: '', component: CyclicTransferComponent
+  path: '', component: CyclicListComponent
 }];
 
 @NgModule({
   declarations: [
-    CyclicTransferComponent
+    CyclicListComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
-  ],
-  exports: [
-    CyclicTransferComponent
   ]
 })
-export class CyclicTransferModule {
+export class CyclicListModule {
 }
