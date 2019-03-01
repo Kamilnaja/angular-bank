@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TransferComponent } from './transfer.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {TransferComponent} from './transfer.component';
 
 export const transferRoutes: Routes = [
     {
@@ -8,7 +8,7 @@ export const transferRoutes: Routes = [
         children: [{ path: 'onetimeTransfer', loadChildren: './one-time-transfer/one-time-transfer.module#OneTimeTransferModule' }]
 
     },
-    // { path: 'cyclicTransfer', component: CyclicTransferComponent },
+  {path: 'cyclicTransfer', loadChildren: './cyclic-transfer/cyclic-transfer.module#CyclicTransferModule'},
     // { path: 'cyclicListTransfer', component: CyclicListComponent }
 ];
 

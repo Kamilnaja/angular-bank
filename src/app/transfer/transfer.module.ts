@@ -1,10 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CyclicListComponent } from './cyclic-list/cyclic-list.component';
-import { CyclicTransferComponent } from './cyclic-transfer/cyclic-transfer.component';
-import { TransferComponent } from './transfer.component';
-import { TransferRoutingModule } from './transfer.routes.module';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {TransferComponent} from './transfer.component';
+import {TransferRoutingModule} from './transfer.routes.module';
 
 @NgModule({
   imports: [
@@ -14,8 +12,7 @@ import { TransferRoutingModule } from './transfer.routes.module';
   ],
   declarations: [
     TransferComponent,
-    CyclicListComponent,
-    CyclicTransferComponent
   ]
 })
-export class TransferModule { }
+export class TransferModule {
+}
