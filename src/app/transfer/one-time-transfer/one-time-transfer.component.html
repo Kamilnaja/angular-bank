@@ -1,18 +1,22 @@
 <form class="one-time-transfer-form" [formGroup]="transferForm" (ngSubmit)="handleSubmit()">
-  <div class="form-group row">
-    <label class="col-md-2 col-form-label tooltip-wrapper" for="receiverName">
-      Nazwa odbiorcy
-      <span appTooltip [info]="'Dane osoby, do której zostanie wysłany przelew'">?</span>
-    </label>
-    <div class="col-md-10">
-      <input type="text" class="form-control" formControlName="receiverName" id="receiverName">
+  <div class="row flex-row-reverse">
+    <div class="col-md-11">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label tooltip-wrapper" for="receiverName">
+          Nazwa odbiorcy
+          <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
+        </label>
+        <div class="col-md-10">
+          <input class="form-control" formControlName="receiverName" id="receiverName" type="text">
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2 order-first">
+  <div class="row flex-row-reverse">
+    <div class="col-md-2 order-last">
       <h4>additional data</h4>
     </div>
-    <div class="col-md-9 order-last">
+    <div class="col-md-9 order-first">
       <div class="form-group row">
         <label class="col-sm-3 col-form-label" for="fromAccount">
           Z rachunku
@@ -51,7 +55,7 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label" for="transferType">
           Rodzaj przelewu
-          <span appTooltip [info]="'Dane osoby, do której zostanie wysłany przelew'">?</span>
+          <span [info]="'Rodzaj przelewu'" appTooltip>?</span>
         </label>
         <div class="col-sm-9">
           <div class="row">
@@ -74,7 +78,7 @@
         </label>
         <div class="col-sm-9">
           <input type="checkbox" class="one-time-transfer-checkbox" formControlName="additionalOptions"
-            id="additionalOptions">
+                 id="additionalOptions">
           <span>Wyślij e-mail z potwierdzeniem przelewu</span>
         </div>
       </div>

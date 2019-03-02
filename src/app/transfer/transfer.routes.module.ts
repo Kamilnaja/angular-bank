@@ -6,7 +6,9 @@ export const transferRoutes: Routes = [
   {
     path: '', component: TransferComponent,
     children: [
-      {path: 'onetimeTransfer', loadChildren: './one-time-transfer/one-time-transfer.module#OneTimeTransferModule'},
+      {
+        path: 'onetimeTransfer', loadChildren: './one-time-transfer/one-time-transfer.module#OneTimeTransferModule'
+      },
       {
         path: 'cyclicTransfer', loadChildren: './cyclic-transfer/cyclic-transfer.module#CyclicTransferModule'
       },
