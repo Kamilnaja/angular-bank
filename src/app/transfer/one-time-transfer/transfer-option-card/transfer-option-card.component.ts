@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 import {Transfer} from '../../../interfaces/Transfer.interface';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-transfer-option-card',
@@ -9,13 +9,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 })
 export class TransferOptionCardComponent implements OnInit {
   @Input() transfer: Transfer;
-  @Input() formGroup: FormGroup;
-  transferForm = this.fb.group({
-    transferType: new FormControl('')
-  });
-
-  constructor(private fb: FormBuilder) {
-  }
+  @Input() options: FormGroup;
 
   ngOnInit() {
   }

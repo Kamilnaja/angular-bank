@@ -1,8 +1,9 @@
-<div [formGroup]="transferForm" class="checkbox-wrapper">
-  <input class="one-time-transfer-checkbox" formControlName="transferType" type="checkbox">
+<div [formGroup]="options" class="checkbox-wrapper">
+  <input [value]="transfer.value" class="one-time-transfer-checkbox" formControlName="kind" type="radio">
 </div>
 <div class="transfer-option-wrapper">
   <p class="transfer-option-title">{{transfer.title}}</p>
   <p class="transfer-option-data">{{transfer.data}}</p>
   <p class="transfer-option-price">{{transfer.price}}</p>
 </div>
+
