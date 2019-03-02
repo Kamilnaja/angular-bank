@@ -1,13 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Transfer } from 'src/app/interfaces/Transfer.interface';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
+import {Transfer} from 'src/app/interfaces/Transfer.interface';
 
 @Component({
   templateUrl: './one-time-transfer.component.html',
   styleUrls: ['./one-time-transfer.component.css']
 })
 export class OneTimeTransferComponent implements OnInit {
-  constructor(private fb: FormBuilder) { }
+  transferForm = this.fb.group({
+    receiverName: [''],
+    fromAccount: [''],
+    toAccount: [''],
+    amount: [''],
+    transferTitle: [''],
+    realizationDate: [''],
+    additionalOptions: [''],
+    transferType: [''],
+  });
+
   transferList: Transfer[] = [
     {
       title: 'Standardowy przelew Elixir',
@@ -25,18 +35,12 @@ export class OneTimeTransferComponent implements OnInit {
       price: 'Opłata 40'
     }
   ];
-  transferForm = this.fb.group({
-    receiverName: [''],
-    fromAccount: [''],
-    toAccount: [''],
-    amount: [''],
-    transferTitle: [''],
-    realizationDate: [''],
-    transferType: [''],
-    additionalOptions: ['']
-  });
 
-  ngOnInit() { }
+  constructor(private fb: FormBuilder) {
+  }
+
+  ngOnInit() {
+  }
 
   handleSubmit() {
     console.log(this.transferForm.value);

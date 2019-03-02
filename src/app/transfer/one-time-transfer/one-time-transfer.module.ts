@@ -4,6 +4,7 @@ import {FormBuilder, ReactiveFormsModule} from '@angular/forms/';
 import {RouterModule, Routes} from '@angular/router';
 import {OneTimeTransferComponent} from './one-time-transfer.component';
 import {TooltipDirective} from 'src/app/tooltip.directive';
+import {TransferOptionCardComponent} from './transfer-option-card/transfer-option-card.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     OneTimeTransferComponent,
-    TooltipDirective
+    TooltipDirective,
+    TransferOptionCardComponent,
   ],
   imports: [
     CommonModule,

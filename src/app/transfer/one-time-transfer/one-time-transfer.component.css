@@ -21,6 +21,7 @@ p {
   color: grey;
   vertical-align: middle;
   left: 5px;
+  cursor: pointer;
 }
 
 .customTooltip:hover {

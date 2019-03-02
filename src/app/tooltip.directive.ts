@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[appTooltip]'
@@ -11,7 +11,7 @@ export class TooltipDirective {
     el.nativeElement.className = 'customTooltip';
   }
 
-  @HostListener('click', ['$event']) onclick($event) {
+  @HostListener('click', ['$event']) onclick() {
     if (!this.isVisible) {
       this.isVisible = true;
       const child = document.createElement('div');
