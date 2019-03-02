@@ -1,17 +1,21 @@
+:host {
+  --circle-size: 20px;
+}
+
 p {
   font-size: 14px;
 }
 
 .customTooltip {
   position: relative;
-  border: 1px solid grey;
+  border: 3px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: var(--circle-size);
+  height: var(--circle-size);
   padding: 10px;
-  line-height: 10px;
-  text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-size: 12px;
   font-weight: bold;
   color: grey;
@@ -24,7 +28,7 @@ p {
   color: white;
 }
 
-.one-time-transfer-form .col-form-label{
+.one-time-transfer-form .col-form-label {
   font-size: 15px;
 }
 
