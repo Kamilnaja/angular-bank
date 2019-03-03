@@ -7,11 +7,16 @@ export class TooltipDirective {
   @Input() info: string;
   isVisible = false;
 
-  constructor(private el: ElementRef) {
-    el.nativeElement.className = 'customTooltip';
+
+  constructor(private el?: ElementRef) {
+    this.el.nativeElement.className = 'customTooltip';
   }
 
-  @HostListener('click', ['$event']) onclick() {
+  @HostListener('mouseenter') onMouseEnter() {
+    this.showPopup();
+  }
+
+  private showPopup() {
     if (!this.isVisible) {
       this.isVisible = true;
       const child = document.createElement('div');

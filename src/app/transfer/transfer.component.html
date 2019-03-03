@@ -1,6 +1,6 @@
 <ul class="list-inline">
-  <li *ngFor="let item of menuItems" class="list-inline-item">
-    <a [routerLink]="item.route">
+  <li *ngFor="let item of menuItems" class="list-inline-item px-2">
+    <a [routerLink]="item.route" routerLinkActive="link-active">
       {{item.name}}
     </a>
   </li>
