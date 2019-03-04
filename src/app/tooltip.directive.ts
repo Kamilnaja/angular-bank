@@ -7,7 +7,6 @@ export class TooltipDirective {
   @Input() info: string;
   isVisible = false;
 
-
   constructor(private el?: ElementRef) {
     this.el.nativeElement.className = 'customTooltip';
   }
@@ -17,16 +16,17 @@ export class TooltipDirective {
   }
 
   private showPopup() {
+    let identifier = Date.now();
     if (!this.isVisible) {
       this.isVisible = true;
       const child = document.createElement('div');
       child.className = 'customTooltip-info';
       child.innerText = this.info;
-      child.id = 'custom-tooltip-info';
+      child.id = `custom-tooltip-info-${identifier}`;
       this.el.nativeElement.parentElement.appendChild(child);
       // unmount element
       setTimeout(() => {
-        this.el.nativeElement.parentElement.removeChild(document.querySelector('#custom-tooltip-info'));
+        this.el.nativeElement.parentElement.removeChild(document.querySelector(`#custom-tooltip-info-${identifier}`));
         this.isVisible = false;
       }, 1000);
     }
