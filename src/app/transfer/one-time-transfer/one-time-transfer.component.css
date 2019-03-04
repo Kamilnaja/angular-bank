@@ -56,3 +56,7 @@ p {
   align-items: center;
   width: 30px;
 }
+
+.form-buttons button {
+  white-space: nowrap;
+}

@@ -36,7 +36,9 @@
           </div>
         </div>
         <div class="form-group row" formGroupName="amount">
-          <label class="col-sm-3 col-form-label" for="amount">Kwota</label>
+          <label class="col-sm-3 col-form-label" for="value">
+            Kwota
+          </label>
           <div class="col-sm-3">
             <input class="form-control" formControlName="value" id="value" type="number">
           </div>
@@ -84,8 +86,10 @@
             <span>Wyślij e-mail z potwierdzeniem przelewu</span>
           </div>
         </div>
-        <div class="d-flex justify-content-around col-md-6">
-          <button class="btn btn-primary" type="submit">Wyślij</button>
+        <div class="d-flex justify-content-around col-lg-6 form-buttons">
+          <button [disabled]="transferForm.invalid" class="btn btn-primary" type="submit">
+            Wyślij
+          </button>
           <button class="btn btn-primary" type="submit">Dodaj do koszyka</button>
           <button class="btn btn-warning" type="submit">Anuluj</button>
         </div>

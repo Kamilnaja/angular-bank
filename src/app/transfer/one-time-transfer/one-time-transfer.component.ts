@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Transfer} from 'src/app/interfaces/Transfer.interface';
+import {DateValidator} from 'src/app/validators/DateValidator';
 
 @Component({
   templateUrl: './one-time-transfer.component.html',
@@ -36,23 +37,24 @@ export class OneTimeTransferComponent implements OnInit {
 
   ngOnInit() {
     this.transferForm = this.fb.group({
-      receiverName: [''],
-      fromAccount: [''],
-      toAccount: [''],
+      receiverName: ['', Validators.required],
+      fromAccount: ['', Validators.required],
+      toAccount: ['', Validators.required],
       amount: this.fb.group({
-        value: [''],
-        currency: ['']
+        value: ['', Validators.required],
+        currency: ['', Validators.required]
       }),
-      transferTitle: [''],
-      realizationDate: [''],
+      transferTitle: ['', Validators.required],
+      realizationDate: ['', DateValidator.ptDate],
       additionalOptions: [''],
       options: this.fb.group({
-        kind: ['']
+        kind: ['', Validators.required]
       })
     });
   }
 
   handleSubmit() {
     console.log(this.transferForm.value);
+
   }
 }
