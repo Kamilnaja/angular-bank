@@ -27,6 +27,8 @@ export class OneTimeTransferComponent implements OnInit {
       value: 3
     }
   ];
+  public currencyList: String[] = ['PLN', 'USD'];
+
   private transferForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -37,7 +39,10 @@ export class OneTimeTransferComponent implements OnInit {
       receiverName: [''],
       fromAccount: [''],
       toAccount: [''],
-      amount: [''],
+      amount: this.fb.group({
+        value: [''],
+        currency: ['']
+      }),
       transferTitle: [''],
       realizationDate: [''],
       additionalOptions: [''],

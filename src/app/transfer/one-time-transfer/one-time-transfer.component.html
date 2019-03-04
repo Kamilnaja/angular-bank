@@ -35,10 +35,17 @@
             <input class="form-control" formControlName="toAccount" id="toAccount" type="text">
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" formGroupName="amount">
           <label class="col-sm-3 col-form-label" for="amount">Kwota</label>
-          <div class="col-sm-9">
-            <input class="form-control" formControlName="amount" id="amount" type="number">
+          <div class="col-sm-3">
+            <input class="form-control" formControlName="value" id="value" type="number">
+          </div>
+          <div class="col-sm-3">
+            <select class="form-control" formControlName="currency" id="currency" type="number">
+              <option *ngFor="let cur of currencyList" value="PLN">
+                {{cur}}
+              </option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
