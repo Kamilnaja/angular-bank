@@ -7,11 +7,7 @@ import {Transfer} from '../../../interfaces/Transfer.interface';
   templateUrl: './transfer-option-card.component.html',
   styleUrls: ['./transfer-option-card.component.css']
 })
-export class TransferOptionCardComponent implements OnInit {
+export class TransferOptionCardComponent {
   @Input() transfer: Transfer;
   @Input() options: FormGroup;
-
-  ngOnInit() {
-  }
-
 }

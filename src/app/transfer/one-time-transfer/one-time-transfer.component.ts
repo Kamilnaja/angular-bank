@@ -32,23 +32,29 @@ export class OneTimeTransferComponent implements OnInit {
 
   private transferForm: FormGroup;
 
+
   constructor(private fb: FormBuilder) {
+  }
+
+  get TodayDate(): string {
+    let now = new Date();
+    return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDay()}`;
   }
 
   ngOnInit() {
     this.transferForm = this.fb.group({
-      receiverName: ['', Validators.required],
-      fromAccount: ['', Validators.required],
-      toAccount: ['', Validators.required],
+      receiverName: ['a', Validators.required],
+      fromAccount: ['a', Validators.required],
+      toAccount: ['a', Validators.required],
       amount: this.fb.group({
-        value: ['', Validators.required],
-        currency: ['', Validators.required]
+        value: ['1', Validators.required],
+        currency: ['PLN', Validators.required]
       }),
-      transferTitle: ['', Validators.required],
+      transferTitle: ['a', Validators.required],
       realizationDate: ['', DateValidator.ptDate],
-      additionalOptions: [''],
+      additionalOptions: ['a'],
       options: this.fb.group({
-        kind: ['', Validators.required]
+        kind: ['a', Validators.required]
       })
     });
   }
