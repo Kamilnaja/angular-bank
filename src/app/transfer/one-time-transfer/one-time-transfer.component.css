@@ -33,26 +33,7 @@ p {
   font-size: 15px;
 }
 
-.transfer-option-title {
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.transfer-option-data {
-  font-size: 12px;
-}
-
-.transfer-option-price {
-  font-size: 12px;
-}
-
-.transfer-option {
-  display: flex;
-}
-
-.checkbox-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
+.transfer-option-card {
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
 }

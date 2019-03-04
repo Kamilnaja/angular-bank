@@ -29,9 +29,8 @@ export class OneTimeTransferComponent implements OnInit {
     }
   ];
   public currencyList: String[] = ['PLN', 'USD'];
-
+  public isModalVisible = false;
   private transferForm: FormGroup;
-
 
   constructor(private fb: FormBuilder) {
   }
@@ -61,6 +60,10 @@ export class OneTimeTransferComponent implements OnInit {
 
   handleSubmit() {
     console.log(this.transferForm.value);
+  }
 
+  onShowed() {
+    console.log('showed and emitted');
+    this.isModalVisible = true;
   }
 }

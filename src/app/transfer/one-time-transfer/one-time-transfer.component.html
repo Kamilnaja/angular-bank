@@ -73,8 +73,10 @@
           <div class="col-sm-9">
             <div class="row">
               <div *ngFor="let transfer of transferList; " class="col-lg-4 transfer-option">
-                <app-transfer-option-card
-                  [options]="transferForm.controls.options" [transfer]="transfer"></app-transfer-option-card>
+                <app-transfer-option-card [options]="transferForm.controls.options"
+                                          [transfer]="transfer"
+                                          class="d-flex transfer-option-card"
+                ></app-transfer-option-card>
               </div>
             </div>
           </div>
@@ -89,8 +91,11 @@
             <span>Wyślij e-mail z potwierdzeniem przelewu</span>
           </div>
         </div>
-        <app-buttons [transferForm]="transferForm"></app-buttons>
+        <app-buttons (showed)="onShowed()" [transferForm]="transferForm"></app-buttons>
       </div>
     </div>
   </form>
+</div>
+<div *ngIf="isModalVisible">
+  <div>App modal</div>
 </div>

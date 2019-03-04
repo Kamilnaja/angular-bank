@@ -1,0 +1,23 @@
+.transfer-option-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.transfer-option-data {
+  font-size: 12px;
+}
+
+.transfer-option-price {
+  font-size: 12px;
+}
+
+.transfer-option {
+  display: flex;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
