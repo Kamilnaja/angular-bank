@@ -10,4 +10,8 @@ import {Transfer} from '../../../interfaces/Transfer.interface';
 export class TransferOptionCardComponent {
   @Input() transfer: Transfer;
   @Input() options: FormGroup;
+
+  // handleClick() {
+  //   console.log(this.options.controls.kind.value);
+  // }
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Standardowy przelew Elixir",
+    "data": "Dziś wieczorem",
+    "price": "Opłata 1.50",
+    "value": 1
+  },
+  {
+    "title": "Ekspresowy do 5000 pln",
+    "data": "Nawet do 15 minut",
+    "price": "Opłata 10",
+    "value": 2
+  },
+  {
+    "title": "Ekspresowy SORBNET bez limitu",
+    "data": "Nawet za 15 minut",
+    "price": "Opłata 40",
+    "value": 3
+  }
+]

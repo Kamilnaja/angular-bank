@@ -72,10 +72,10 @@
           </label>
           <div class="col-sm-9">
             <div class="row">
-              <div *ngFor="let transfer of transferList; " class="col-lg-4 transfer-option">
+              <div *ngFor="let transfer of transferList.default;" class="col-lg-4 transfer-option">
                 <app-transfer-option-card [options]="transferForm.controls.options"
                                           [transfer]="transfer"
-                                          class="d-flex transfer-option-card"
+
                 ></app-transfer-option-card>
               </div>
             </div>

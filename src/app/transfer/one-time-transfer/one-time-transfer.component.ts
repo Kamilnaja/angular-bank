@@ -1,46 +1,29 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Transfer} from 'src/app/interfaces/Transfer.interface';
 import {DateValidator} from 'src/app/validators/DateValidator';
+import * as transfers from 'src/app/models/TransferList.json';
+import {currencyList} from 'src/app/models/CurrencyList';
 
 @Component({
   templateUrl: './one-time-transfer.component.html',
   styleUrls: ['./one-time-transfer.component.css']
 })
 export class OneTimeTransferComponent implements OnInit {
-  transferList: Transfer[] = [
-    {
-      title: 'Standardowy przelew Elixir',
-      data: 'Dziś wieczorem',
-      price: 'Opłata 1.50',
-      value: 1
-    },
-    {
-      title: 'Ekspresowy do 5000 pln',
-      data: 'Nawet do 15 minut',
-      price: 'Opłata 10',
-      value: 2
-    },
-    {
-      title: 'Ekspresowy SORBNET bez limitu',
-      data: 'Nawet za 15 minut',
-      price: 'Opłata 40',
-      value: 3
-    }
-  ];
-  public currencyList: String[] = ['PLN', 'USD'];
-  public isModalVisible = false;
+  public currencyList: String[] = currencyList;
+  isModalVisible = false;
   private transferForm: FormGroup;
+  private transferList;
 
   constructor(private fb: FormBuilder) {
   }
 
   get TodayDate(): string {
-    let now = new Date();
+    const now = new Date();
     return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDay()}`;
   }
 
   ngOnInit() {
+    this.transferList = transfers;
     this.transferForm = this.fb.group({
       receiverName: ['a', Validators.required],
       fromAccount: ['a', Validators.required],

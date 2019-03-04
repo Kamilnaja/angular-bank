@@ -32,8 +32,3 @@ p {
 .one-time-transfer-form .col-form-label {
   font-size: 15px;
 }
-
-.transfer-option-card {
-  border: 1px dashed rgba(0, 0, 0, 0.1);
-  padding: 5px 10px;
-}

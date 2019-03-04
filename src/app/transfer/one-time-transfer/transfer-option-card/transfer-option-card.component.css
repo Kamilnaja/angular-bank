@@ -21,3 +21,10 @@
   align-items: center;
   width: 30px;
 }
+
+.transfer-option-card {
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}

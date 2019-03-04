@@ -3,12 +3,13 @@ import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TransferComponent} from './transfer.component';
 import {TransferRoutingModule} from './transfer.routes.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     TransferRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     TransferComponent,
