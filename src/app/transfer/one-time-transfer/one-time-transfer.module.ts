@@ -6,6 +6,7 @@ import {OneTimeTransferComponent} from './one-time-transfer.component';
 import {TooltipDirective} from 'src/app/tooltip.directive';
 import {TransferOptionCardComponent} from './transfer-option-card/transfer-option-card.component';
 import {ButtonsComponent} from './buttons/buttons.component';
+import {RestrictCurrencyDirective} from '../../restrict-currency.directive';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
     OneTimeTransferComponent,
     TooltipDirective,
     TransferOptionCardComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    RestrictCurrencyDirective
   ],
   imports: [
     CommonModule,

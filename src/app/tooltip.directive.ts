@@ -16,7 +16,7 @@ export class TooltipDirective {
   }
 
   private showPopup() {
-    let identifier = Date.now();
+    const identifier = Date.now();
     if (!this.isVisible) {
       this.isVisible = true;
       const child = document.createElement('div');

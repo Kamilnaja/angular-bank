@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-buttons',
@@ -9,10 +8,6 @@ import {Router} from '@angular/router';
 export class ButtonsComponent {
   @Input() transferForm: any; // todo - remove any
   @Output() showed = new EventEmitter<boolean>();
-
-  constructor(private router: Router) {
-
-  }
 
   cancelForm(): void {
     this.showed.emit();

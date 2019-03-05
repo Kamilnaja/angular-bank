@@ -7,7 +7,6 @@ import {DesktopComponent} from './desktop/desktop.component';
 import {HistoryComponent} from './history/history.component';
 import {MainNavbarComponent} from './main-navbar/main-navbar.component';
 import {ThanksScreenComponent} from './thanks-screen/thanks-screen.component';
-import {ButtonsComponent} from './transfer/one-time-transfer/buttons/buttons.component';
 
 @NgModule({
   declarations: [

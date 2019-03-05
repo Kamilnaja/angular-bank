@@ -1,9 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {OneTimeTransferComponent} from './one-time-transfer.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {TransferOptionCardComponent} from './transfer-option-card/transfer-option-card.component';
-import {TooltipDirective} from '../../tooltip.directive';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 describe('OneTimeTransferComponent', () => {
   let component: OneTimeTransferComponent;
@@ -11,8 +8,13 @@ describe('OneTimeTransferComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [OneTimeTransferComponent, TransferOptionCardComponent, TooltipDirective],
-      imports: [ReactiveFormsModule]
+      declarations: [
+        OneTimeTransferComponent,
+      ],
+      imports: [
+        ReactiveFormsModule,
+        FormsModule
+      ]
     })
       .compileComponents();
   }));

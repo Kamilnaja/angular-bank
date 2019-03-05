@@ -11,7 +11,4 @@ export class TransferOptionCardComponent {
   @Input() transfer: Transfer;
   @Input() options: FormGroup;
 
-  // handleClick() {
-  //   console.log(this.options.controls.kind.value);
-  // }
 }

@@ -29,7 +29,7 @@ export class OneTimeTransferComponent implements OnInit {
       fromAccount: ['a', Validators.required],
       toAccount: ['a', Validators.required],
       amount: this.fb.group({
-        value: ['1', Validators.required],
+        value: ['', Validators.required],
         currency: ['PLN', Validators.required]
       }),
       transferTitle: ['a', Validators.required],

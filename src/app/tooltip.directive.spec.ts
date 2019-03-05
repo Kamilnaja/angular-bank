@@ -1,8 +1,14 @@
 import {TooltipDirective} from './tooltip.directive';
-import {TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {OneTimeTransferComponent} from './transfer/one-time-transfer/one-time-transfer.component';
+import {DebugElement} from '@angular/core';
+import {By} from '@angular/platform-browser';
 
 describe('TooltipDirective', () => {
+  let component: OneTimeTransferComponent;
+  let fixture: ComponentFixture<OneTimeTransferComponent>;
+  let inputEl: DebugElement;
+
   beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [
@@ -10,9 +16,9 @@ describe('TooltipDirective', () => {
         OneTimeTransferComponent
       ]
     });
-  });
-  it('should create an instance', () => {
-    const directive = new TooltipDirective();
-    expect(directive).toBeTruthy();
+    fixture = TestBed.createComponent(OneTimeTransferComponent);
+    component = fixture.componentInstance;
+    inputEl = fixture.debugElement.query(By.css('input'));
   });
 });
+//todo - add tests

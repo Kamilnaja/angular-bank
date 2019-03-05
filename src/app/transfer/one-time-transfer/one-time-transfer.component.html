@@ -40,10 +40,10 @@
             Kwota
           </label>
           <div class="col-sm-3">
-            <input class="form-control" formControlName="value" id="value" min="0" type="number">
+            <input appRestrictCurrency class="form-control" formControlName="value" id="value">
           </div>
           <div class="col-sm-3">
-            <select class="form-control" formControlName="currency" id="currency" type="number">
+            <select class="form-control" formControlName="currency" id="currency">
               <option *ngFor="let cur of currencyList" [value]="cur">
                 {{cur}}
               </option>
