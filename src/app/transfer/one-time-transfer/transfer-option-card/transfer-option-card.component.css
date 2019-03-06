@@ -24,7 +24,12 @@
 
 .transfer-option-card {
   border: 2px dashed rgba(0, 0, 0, 0.2);
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 5px;
   margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.transfer-option-card:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
