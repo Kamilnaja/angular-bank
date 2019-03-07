@@ -7,7 +7,7 @@
             Nazwa odbiorcy
             <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
           </label>
-          <div class="col-sm-10">
+          <div class="col-sm-10 input-tick-wrapper">
             <input class="form-control" formControlName="receiverName" id="receiverName" type="text">
           </div>
         </div>
@@ -15,7 +15,9 @@
     </div>
     <div class="row flex-row-reverse">
       <div class="col-md-2 order-last">
-        <h4>additional data</h4>
+        <h4>
+          additional data
+        </h4>
       </div>
       <div class="col-md-9 order-first">
         <div class="form-group row">
@@ -30,6 +32,7 @@
           <label class="col-sm-3 col-form-label" for="toAccount">
             Na rachunek
             <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
+            <span *ngIf="(toAccount.dirty || toAccount.touched) && !toAccount.invalid" class="form-input-valid">✓</span>
           </label>
           <div class="col-sm-9">
             <input class="form-control" formControlName="toAccount" id="toAccount" type="text">
@@ -40,7 +43,7 @@
             Kwota
           </label>
           <div class="col-sm-3">
-            <input appRestrictCurrency class="form-control" formControlName="value" id="value">
+            <input appRestrictCurrency class="form-control" formControlName="value" id="value" type="text">
           </div>
           <div class="col-sm-3">
             <select class="form-control" formControlName="currency" id="currency">

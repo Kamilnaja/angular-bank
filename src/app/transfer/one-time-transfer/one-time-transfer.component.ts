@@ -22,11 +22,44 @@ export class OneTimeTransferComponent implements OnInit {
     return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDay()}`;
   }
 
+  get receiverName() {
+    return this.transferForm.get('receiverName');
+  }
+
+  handleSubmit() {
+    console.log(this.transferForm.value);
+  }
+
+  onShowed() {
+    console.log('showed and emitted');
+    this.isModalVisible = true;
+  }
+
+  get fromAccount() {
+    return this.transferForm.get('fromAccount');
+  }
+
+  get toAccount() {
+    return this.transferForm.get('toAccount');
+  }
+
+  get amount() {
+    return this.transferForm.get('amount');
+  }
+
+  get realizationDate() {
+    return this.transferForm.get('realizationDate');
+  }
+
+  get options() {
+    return this.transferForm.get('options');
+  }
+
   ngOnInit() {
     this.transferList = transfers;
     this.transferForm = this.fb.group({
       receiverName: ['a', Validators.required],
-      fromAccount: ['a', Validators.required],
+      fromAccount: ['', Validators.required],
       toAccount: ['a', Validators.required],
       amount: this.fb.group({
         value: ['', Validators.required],
@@ -41,12 +74,4 @@ export class OneTimeTransferComponent implements OnInit {
     });
   }
 
-  handleSubmit() {
-    console.log(this.transferForm.value);
-  }
-
-  onShowed() {
-    console.log('showed and emitted');
-    this.isModalVisible = true;
-  }
 }
