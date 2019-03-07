@@ -7,7 +7,6 @@ import {DesktopComponent} from './desktop/desktop.component';
 import {HistoryComponent} from './history/history.component';
 import {MainNavbarComponent} from './main-navbar/main-navbar.component';
 import {ThanksScreenComponent} from './thanks-screen/thanks-screen.component';
-import {InputStatusDirective} from './directives/input-status.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import {InputStatusDirective} from './directives/input-status.directive';
     HistoryComponent,
     DesktopComponent,
     ThanksScreenComponent,
-    InputStatusDirective
   ],
   imports: [
     BrowserModule,

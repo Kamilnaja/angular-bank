@@ -32,11 +32,11 @@
           <label class="col-sm-3 col-form-label" for="toAccount">
             Na rachunek
             <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
-            <span appInputStatus></span>
-            <span *ngIf="(toAccount.dirty || toAccount.touched) && !toAccount.invalid" class="form-input-valid">✓</span>
           </label>
           <div class="col-sm-9">
-            <input class="form-control" formControlName="toAccount" id="toAccount" type="text">
+            <input [formStatus]="toAccount" appInputStatus class="form-control" formControlName="toAccount"
+                   id="toAccount"
+                   type="text">
           </div>
         </div>
         <div class="form-group row" formGroupName="amount">

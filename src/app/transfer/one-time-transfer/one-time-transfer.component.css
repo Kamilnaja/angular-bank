@@ -33,11 +33,3 @@ p {
   font-size: 15px;
 }
 
-.form-input-valid {
-  display: inline;
-  z-index: 100;
-  height: 5px;
-  margin-left: 20px;
-  color: forestgreen;
-  font-size: 20px;
-}

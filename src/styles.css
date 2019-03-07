@@ -1,43 +1,43 @@
 :root {
-    --navbar-height: 40px;
-    --color-light: rgba(0, 0, 0, 0.1);
+  --navbar-height: 40px;
+  --color-light: rgba(0, 0, 0, 0.1);
 }
 
 li a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .link-active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .link-active:after {
-    content: "";
-    width: 35px;
-    height: 3px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: tomato;
-    top: var(--navbar-height);
-    z-index: 100;
+  content: "";
+  width: 35px;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: tomato;
+  top: var(--navbar-height);
+  z-index: 100;
 }
 
 .list-inline-item {
-    position: relative;
+  position: relative;
 }
 
 .list-inline:after {
-    content: "";
-    width: 100%;
-    max-width: 100%;
-    height: 3px;
-    position: absolute;
-    background-color: var(--color-light);
-    top: calc(var(--navbar-height) + 5px);
-    left: 50%;
-    transform: translate(-50%);
-    z-index: 1;
+  content: "";
+  width: 100%;
+  max-width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: var(--color-light);
+  top: calc(var(--navbar-height) + 5px);
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
 }
 
 div.customTooltip-info {
@@ -50,4 +50,19 @@ div.customTooltip-info {
   line-height: 20px;
   z-index: 100;
   border-radius: 5px;
+}
+
+.validation-info {
+  position: absolute;
+  left: -15px;
+  top: 5px;
+  margin-right: 15px;
+}
+
+.validation-info-valid-false {
+  color: red;
+}
+
+.validation-info-valid-true {
+  color: green;
 }
