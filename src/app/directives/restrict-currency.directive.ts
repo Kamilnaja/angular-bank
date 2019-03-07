@@ -21,5 +21,5 @@ export class RestrictCurrencyDirective {
     if (next && !String(next).match(this.regex)) {
       event.preventDefault();
     }
-  }
+  } // todo - fix error with moving cursor
 }

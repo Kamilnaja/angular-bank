@@ -3,10 +3,10 @@ import {NgModule} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms/';
 import {RouterModule, Routes} from '@angular/router';
 import {OneTimeTransferComponent} from './one-time-transfer.component';
-import {TooltipDirective} from 'src/app/tooltip.directive';
+import {TooltipDirective} from 'src/app/directives/tooltip.directive';
 import {TransferOptionCardComponent} from './transfer-option-card/transfer-option-card.component';
 import {ButtonsComponent} from './buttons/buttons.component';
-import {RestrictCurrencyDirective} from '../../restrict-currency.directive';
+import {RestrictCurrencyDirective} from '../../directives/restrict-currency.directive';
 
 const routes: Routes = [
   {
