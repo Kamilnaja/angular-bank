@@ -7,7 +7,7 @@ import {TooltipDirective} from 'src/app/directives/tooltip.directive';
 import {TransferOptionCardComponent} from './transfer-option-card/transfer-option-card.component';
 import {ButtonsComponent} from './buttons/buttons.component';
 import {RestrictCurrencyDirective} from '../../directives/restrict-currency.directive';
-import {InputStatusDirective} from '../../directives/input-status.directive';
+import {InputStatusComponent} from '../../directives/input-status.component';
 
 const routes: Routes = [
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
     TransferOptionCardComponent,
     ButtonsComponent,
     RestrictCurrencyDirective,
-    InputStatusDirective
+    InputStatusComponent
   ],
   imports: [
     CommonModule,

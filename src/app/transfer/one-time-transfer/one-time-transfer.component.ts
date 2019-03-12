@@ -55,16 +55,21 @@ export class OneTimeTransferComponent implements OnInit {
     return this.transferForm.get('options');
   }
 
+  get pesel() {
+    return this.transferForm.get('pesel');
+  }
+
   ngOnInit() {
     this.transferList = transfers;
     this.transferForm = this.fb.group({
       receiverName: ['a', Validators.required],
       fromAccount: ['', Validators.required],
-      toAccount: ['a', Validators.required],
+      toAccount: ['', Validators.required],
       amount: this.fb.group({
         value: ['', Validators.required],
         currency: ['PLN', Validators.required]
       }),
+      pesel: ['', Validators.required],
       transferTitle: ['a', Validators.required],
       realizationDate: ['', DateValidator.ptDate],
       additionalOptions: ['a'],
