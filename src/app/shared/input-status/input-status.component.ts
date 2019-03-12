@@ -1,15 +1,7 @@
-import {Component, ElementRef, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, ElementRef, Input} from '@angular/core';
 
 @Component({
-  template: `
-    <span class="validation-info" *ngIf="show">
-      <span *ngIf="formIsValid" class="validation-info-valid-true">
-        ✔
-      </span>
-      <span *ngIf="!formIsValid" class="validation-info-valid-false ">
-        ⁂
-      </span>
-    </span>`,
+  templateUrl: './input-status.html',
   selector: 'app-input-status'
 })
 export class InputStatusComponent {
