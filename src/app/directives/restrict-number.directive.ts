@@ -21,10 +21,6 @@ export class RestrictNumberDirective {
     if (next && !String(next).match(this.regex)) {
       event.preventDefault();
     }
-    this.loguj();
   }
 
-  private loguj() {
-    console.log('kurła');
-  }
 }
