@@ -8,6 +8,7 @@ import {TransferOptionCardComponent} from './transfer-option-card/transfer-optio
 import {ButtonsComponent} from './buttons/buttons.component';
 import {RestrictCurrencyDirective} from '../../directives/restrict-currency.directive';
 import {InputStatusComponent} from '../../shared/input-status/input-status.component';
+import {RestrictNumberDirective} from '../../directives/restrict-number.directive';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
     TransferOptionCardComponent,
     ButtonsComponent,
     RestrictCurrencyDirective,
+    RestrictNumberDirective,
     InputStatusComponent
   ],
   imports: [

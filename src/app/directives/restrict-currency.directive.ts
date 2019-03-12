@@ -1,26 +1,12 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
+import {Directive, ElementRef} from '@angular/core';
+import {RestrictNumberDirective} from './restrict-number.directive';
 
-// https://stackoverflow.com/questions/50722368/limit-input-field-to-two-decimal-places-angular-5
 @Directive({
   selector: '[appRestrictCurrency]',
 })
-export class RestrictCurrencyDirective {
-  private regex: RegExp = new RegExp(/^\d*[.,]?\d{0,2}$/g); // user can put . or , char
-  private specialKeys: Array<string> = ['Backspace', 'Tab', 'End', 'Home', '-', 'ArrowLeft', 'ArrowRight'];
+export class RestrictCurrencyDirective extends RestrictNumberDirective {
 
-  constructor(private el: ElementRef) {
-  }
-
-  @HostListener('keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    if (this.specialKeys.includes(event.key)) {
-      return;
-    }
-    const current: string = this.el.nativeElement.value;
-    const position = this.el.nativeElement.selectionStart;
-    const next: string = [current.slice(0, position), event.key === 'Decimal' ? '.' : event.key, current.slice(position)].join('');
-    if (next && !String(next).match(this.regex)) {
-      event.preventDefault();
-    }
+  constructor(_el: ElementRef) {
+    super(_el);
   }
 }
