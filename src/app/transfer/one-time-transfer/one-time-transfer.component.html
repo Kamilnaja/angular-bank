@@ -61,9 +61,11 @@
           </div>
           <div class="col-sm-3">
             <select class="form-control" formControlName="currency" id="currency">
-              <option *ngFor="let cur of currencyList" [value]="cur">
-                {{cur}}
-              </option>
+              <ng-template [ngForOf]="currencyList" let-cur ngFor>
+                <option [value]="cur">
+                  {{cur}}
+                </option>
+              </ng-template>
             </select>
           </div>
         </div>

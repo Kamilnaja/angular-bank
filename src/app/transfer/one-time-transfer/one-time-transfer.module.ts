@@ -35,7 +35,8 @@ const routes: Routes = [
     FormBuilder
   ],
   exports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RestrictCurrencyDirective
   ]
 })
 export class OneTimeTransferModule {
