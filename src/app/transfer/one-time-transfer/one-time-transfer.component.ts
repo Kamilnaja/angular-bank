@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { DateValidator } from 'src/app/validators/DateValidator';
 import * as transfers from 'src/app/models/TransferList.json';
 import { currencyList } from 'src/app/models/CurrencyList';
@@ -27,8 +27,24 @@ export class OneTimeTransferComponent implements OnInit {
   }
 
   handleSubmit() {
-    console.log(this.transferForm.value);
+    if (this.transferForm.valid) {
+      console.log(this.transferForm.value);
+    } else {
+      this.validateAllFormFields(this.transferForm);
+    }
   }
+
+  private validateAllFormFields(form: FormGroup) {
+    Object.keys(form.controls).forEach(field => {
+      const control = form.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true })
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    })
+  }
+
 
   onShowed() {
     console.log('showed and emitted');
