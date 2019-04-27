@@ -16,7 +16,7 @@ export class TooltipDirective {
   }
 
   private showPopup() {
-    const identifier = Date.now();
+    const identifier = Date.now(); // todo - add uui from lodash!
     if (!this.isVisible) {
       this.isVisible = true;
       const child = document.createElement('div');

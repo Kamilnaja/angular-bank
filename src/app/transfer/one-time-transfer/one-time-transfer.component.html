@@ -34,9 +34,7 @@
             <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
           </label>
           <div class="col-sm-9">
-            <input autocomplete="off" class="form-control"
-                   id="toAccount"
-                   formControlName="toAccount" type="text">
+            <input autocomplete="off" class="form-control" id="toAccount" formControlName="toAccount" type="text">
             <app-input-status [formIsValid]="toAccount.valid" [show]="toAccount.touched"></app-input-status>
           </div>
         </div>
@@ -46,9 +44,7 @@
             <span [info]="'Pesel odbiorcy'" appTooltip>?</span>
           </label>
           <div class="col-sm-9">
-            <input autocomplete="off" class="form-control"
-                   formControlName="pesel"
-                   id="pesel" type="text">
+            <input autocomplete="off" class="form-control" formControlName="pesel" id="pesel" type="text">
           </div>
         </div>
         <div class="form-group row" formGroupName="amount">
@@ -57,7 +53,7 @@
           </label>
           <div class="col-sm-3">
             <input appRestrictCurrency autocomplete="off" class="form-control" formControlName="value" id="value"
-                   type="text">
+              type="text">
           </div>
           <div class="col-sm-3">
             <select class="form-control" formControlName="currency" id="currency">
@@ -73,7 +69,7 @@
           <label class="col-sm-3 col-form-label" for="transferTitle">Tytuł przelewu</label>
           <div class="col-sm-9">
             <input autocomplete="off" class="form-control" formControlName="transferTitle" id="transferTitle"
-                   type="text">
+              type="text">
           </div>
         </div>
         <div class="form-group row">
@@ -82,7 +78,7 @@
           </label>
           <div class="col-sm-9">
             <input [min]="TodayDate" class="form-control" formControlName="realizationDate" id="realizationDate"
-                   type="date">
+              type="date">
           </div>
         </div>
         <div class="form-group row">
@@ -93,10 +89,8 @@
           <div class="col-sm-9">
             <div class="row">
               <div *ngFor="let transfer of transferList.default;" class="col-lg-4 transfer-option">
-                <app-transfer-option-card [options]="transferForm.controls.options"
-                                          [transfer]="transfer"
-
-                ></app-transfer-option-card>
+                <app-transfer-option-card [options]="transferForm.controls.options" [transfer]="transfer">
+                </app-transfer-option-card>
               </div>
             </div>
           </div>
@@ -107,7 +101,7 @@
           </label>
           <div class="col-sm-9">
             <input class="one-time-transfer-checkbox" formControlName="additionalOptions" id="additionalOptions"
-                   type="checkbox">
+              type="checkbox">
             <span>Wyślij e-mail z potwierdzeniem przelewu</span>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DateValidator} from 'src/app/validators/DateValidator';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DateValidator } from 'src/app/validators/DateValidator';
 import * as transfers from 'src/app/models/TransferList.json';
-import {currencyList} from 'src/app/models/CurrencyList';
+import { currencyList } from 'src/app/models/CurrencyList';
 
 @Component({
   templateUrl: './one-time-transfer.component.html',
@@ -11,8 +11,8 @@ import {currencyList} from 'src/app/models/CurrencyList';
 export class OneTimeTransferComponent implements OnInit {
   public currencyList: String[] = currencyList;
   isModalVisible = false;
-  private transferForm: FormGroup;
-  private transferList;
+  public transferForm: FormGroup;
+  public transferList;
 
   constructor(private fb: FormBuilder) {
   }
@@ -61,8 +61,13 @@ export class OneTimeTransferComponent implements OnInit {
 
   ngOnInit() {
     this.transferList = transfers;
+    this.setupForm();
+  }
+
+
+  private setupForm() {
     this.transferForm = this.fb.group({
-      receiverName: ['a', Validators.required],
+      receiverName: ['', Validators.required],
       fromAccount: ['', Validators.required],
       toAccount: ['', Validators.required],
       amount: this.fb.group({
@@ -78,5 +83,4 @@ export class OneTimeTransferComponent implements OnInit {
       })
     });
   }
-
 }
