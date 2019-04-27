@@ -1,4 +1,5 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import * as _ from 'lodash';
 
 @Directive({
   selector: '[appTooltip]'
@@ -16,7 +17,8 @@ export class TooltipDirective {
   }
 
   private showPopup() {
-    const identifier = Date.now(); // todo - add uui from lodash!
+    const identifier = _.uniqueId('id-')
+
     if (!this.isVisible) {
       this.isVisible = true;
       const child = document.createElement('div');
@@ -24,11 +26,15 @@ export class TooltipDirective {
       child.innerText = this.info;
       child.id = `custom-tooltip-info-${identifier}`;
       this.el.nativeElement.parentElement.appendChild(child);
-      // unmount element
-      setTimeout(() => {
-        this.el.nativeElement.parentElement.removeChild(document.querySelector(`#custom-tooltip-info-${identifier}`));
-        this.isVisible = false;
-      }, 1000);
+      this.unmountElement(identifier);
     }
+  }
+
+  private unmountElement(identifier: string) {
+    setTimeout(() => {
+      this.el.nativeElement.parentElement
+        .removeChild(document.querySelector(`#custom-tooltip-info-${identifier}`));
+      this.isVisible = false;
+    }, 1000);
   }
 }
