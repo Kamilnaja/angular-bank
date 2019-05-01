@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import { DateValidator } from 'src/app/validators/DateValidator';
 import * as transfers from 'src/app/models/TransferList.json';
 import { currencyList } from 'src/app/models/CurrencyList';
@@ -45,7 +45,6 @@ export class OneTimeTransferComponent implements OnInit {
     })
   }
 
-
   onShowed() {
     console.log('showed and emitted');
     this.isModalVisible = true;
@@ -75,14 +74,18 @@ export class OneTimeTransferComponent implements OnInit {
     return this.transferForm.get('pesel');
   }
 
+  get tags(): FormArray {
+    return this.transferForm.get('tags') as FormArray;
+  }
+
   ngOnInit() {
     this.transferList = transfers;
     this.setupForm();
   }
 
-
   private setupForm() {
     this.transferForm = this.fb.group({
+      tags: new FormArray([]),
       receiverName: ['', Validators.required],
       fromAccount: ['', Validators.required],
       toAccount: ['', Validators.required],
@@ -94,9 +97,19 @@ export class OneTimeTransferComponent implements OnInit {
       transferTitle: ['a', Validators.required],
       realizationDate: ['', DateValidator.ptDate],
       additionalOptions: ['a'],
+      tagControl: [],
       options: this.fb.group({
         kind: ['a', Validators.required]
       })
     });
+  }
+
+  public addItem() {
+    const control = this.transferForm.controls.tagControl;
+    if (control.value && control.value.length) {
+      const tags = this.transferForm.get('tags') as FormArray;
+      tags.push(new FormControl(control.value));
+      control.setValue('');
+    }
   }
 }

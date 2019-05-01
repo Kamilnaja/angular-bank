@@ -96,6 +96,18 @@
           </div>
         </div>
         <div class="form-group row">
+          <label for="tags" class="col-sm-3 col-form-label">
+            Tagi
+          </label>
+          <input type="text" name="tags" formControlName="tagControl">
+          <div>
+            <button (click)="addItem()">Add item</button>
+          </div>
+        </div>
+        <ul *ngFor="let item of transferForm.controls.tags.value">
+          <li>{{item}}</li>
+        </ul>
+        <div class="form-group row">
           <label class="col-sm-3 col-form-label" for="additionalOptions">
             Opcje dodatkowe
           </label>
