@@ -101,11 +101,13 @@
           </label>
           <input type="text" name="tags" formControlName="tagControl">
           <div>
-            <button (click)="addItem()">Add item</button>
+            <button (click)="addItem()" class="btn btn-primary">Add item</button>
           </div>
         </div>
-        <ul *ngFor="let item of transferForm.controls.tags.value">
-          <li>{{item}}</li>
+        <ul class="badges">
+          <li *ngFor="let item of transferForm.controls.tags.value">
+            <span class="badge badge-primary">{{item}}</span>
+          </li>
         </ul>
         <div class="form-group row">
           <label class="col-sm-3 col-form-label" for="additionalOptions">

@@ -37,3 +37,15 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
   box-shadow: 2px 2px 2px rgba(200, 0, 0, 0.3);
 }
+
+.badges {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.badge {
+  margin: 5px 5px;
+}
+
