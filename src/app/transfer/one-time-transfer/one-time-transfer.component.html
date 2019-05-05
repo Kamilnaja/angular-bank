@@ -1,9 +1,9 @@
 <div class="container">
   <form (ngSubmit)="handleSubmit()" [formGroup]="transferForm" class="one-time-transfer-form">
-    <div class="row flex-row-reverse">
-      <div class="col-md-11">
+    <div class="row">
+      <div class="col-md-12">
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label tooltip-wrapper" for="receiverName">
+          <label class="col-md-2 col-form-label tooltip-wrapper" for="receiverName">
             Nazwa odbiorcy
             <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
           </label>
@@ -13,113 +13,118 @@
         </div>
       </div>
     </div>
-    <div class="row flex-row-reverse">
-      <div class="col-md-2 order-last">
-        <h4>
-          additional data
-        </h4>
-      </div>
-      <div class="col-md-9 order-first">
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="fromAccount">
-            Z rachunku
-          </label>
-          <div class="col-sm-9">
-            <input autocomplete="off" class="form-control" formControlName="fromAccount" id="fromAccount" type="text">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2">
+            <h5>
+              additional data
+            </h5>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="toAccount">
-            Na rachunek
-            <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
-          </label>
-          <div class="col-sm-9">
-            <input autocomplete="off" class="form-control" id="toAccount" formControlName="toAccount" type="text">
-            <app-input-status [formIsValid]="toAccount.valid" [show]="toAccount.touched"></app-input-status>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="pesel">
-            Pesel
-            <span [info]="'Pesel odbiorcy'" appTooltip>?</span>
-          </label>
-          <div class="col-sm-9">
-            <input autocomplete="off" class="form-control" formControlName="pesel" id="pesel" type="text">
-          </div>
-        </div>
-        <div class="form-group row" formGroupName="amount">
-          <label class="col-sm-3 col-form-label" for="value">
-            Kwota
-          </label>
-          <div class="col-sm-3">
-            <input appRestrictCurrency autocomplete="off" class="form-control" formControlName="value" id="value"
-              type="text">
-          </div>
-          <div class="col-sm-3">
-            <select class="form-control" formControlName="currency" id="currency">
-              <ng-template [ngForOf]="currencyList" let-cur ngFor>
-                <option [value]="cur">
-                  {{cur}}
-                </option>
-              </ng-template>
-            </select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="transferTitle">Tytuł przelewu</label>
-          <div class="col-sm-9">
-            <input autocomplete="off" class="form-control" formControlName="transferTitle" id="transferTitle"
-              type="text">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="realizationDate">
-            Data przelewu
-          </label>
-          <div class="col-sm-9">
-            <input [min]="TodayDate" class="form-control" formControlName="realizationDate" id="realizationDate"
-              type="date">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="transferType">
-            Rodzaj przelewu
-            <span [info]="'Rodzaj przelewu'" appTooltip id="transferType">?</span>
-          </label>
-          <div class="col-sm-9">
-            <div class="row">
-              <div *ngFor="let transfer of transferList.default;" class="col-lg-4 transfer-option">
-                <app-transfer-option-card [options]="options" [transfer]="transfer">
-                </app-transfer-option-card>
+          <div class="col-sm-10">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="fromAccount">
+                Z rachunku
+              </label>
+              <div class="col-sm-9">
+                <input autocomplete="off" class="form-control" formControlName="fromAccount" id="fromAccount"
+                  type="text">
               </div>
             </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="toAccount">
+                Na rachunek
+                <span [info]="'Dane osoby, do której zostanie wysłany przelew'" appTooltip>?</span>
+              </label>
+              <div class="col-sm-9">
+                <input autocomplete="off" class="form-control" id="toAccount" formControlName="toAccount" type="text">
+                <app-input-status [formIsValid]="toAccount.valid" [show]="toAccount.touched"></app-input-status>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="pesel">
+                Pesel
+                <span [info]="'Pesel odbiorcy'" appTooltip>?</span>
+              </label>
+              <div class="col-sm-9">
+                <input autocomplete="off" class="form-control" formControlName="pesel" id="pesel" type="text">
+              </div>
+            </div>
+            <div class="form-group row" formGroupName="amount">
+              <label class="col-sm-3 col-form-label" for="value">
+                Kwota
+              </label>
+              <div class="col-sm-3">
+                <input appRestrictCurrency autocomplete="off" class="form-control" formControlName="value" id="value"
+                  type="text">
+              </div>
+              <div class="col-sm-3">
+                <select class="form-control" formControlName="currency" id="currency">
+                  <ng-template [ngForOf]="currencyList" let-cur ngFor>
+                    <option [value]="cur">
+                      {{cur}}
+                    </option>
+                  </ng-template>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="transferTitle">Tytuł przelewu</label>
+              <div class="col-sm-9">
+                <input autocomplete="off" class="form-control" formControlName="transferTitle" id="transferTitle"
+                  type="text">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="realizationDate">
+                Data przelewu
+              </label>
+              <div class="col-sm-9">
+                <input [min]="TodayDate" class="form-control" formControlName="realizationDate" id="realizationDate"
+                  type="date">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="transferType">
+                Rodzaj przelewu
+                <span [info]="'Rodzaj przelewu'" appTooltip id="transferType">?</span>
+              </label>
+              <div class="col-sm-9">
+                <div class="row">
+                  <div *ngFor="let transfer of transferList.default;" class="col-lg-4 transfer-option">
+                    <app-transfer-option-card [options]="options" [transfer]="transfer">
+                    </app-transfer-option-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="tags" class="col-sm-3 col-form-label">
+                Tagi
+              </label>
+              <input type="text" name="tags" formControlName="tagControl">
+              <div>
+                <button (click)="addItem()" class="btn btn-primary">Add item</button>
+              </div>
+            </div>
+            <ul class="badges">
+              <li *ngFor="let item of tags.value">
+                <span class="badge badge-primary">{{item}}</span>
+              </li>
+            </ul>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="additionalOptions">
+                Opcje dodatkowe
+              </label>
+              <div class="col-sm-9">
+                <input class="one-time-transfer-checkbox" formControlName="additionalOptions" id="additionalOptions"
+                  type="checkbox">
+                <span>Wyślij e-mail z potwierdzeniem przelewu</span>
+              </div>
+            </div>
+            <app-buttons (showed)="onShowed()" [transferForm]="transferForm"></app-buttons>
           </div>
         </div>
-        <div class="form-group row">
-          <label for="tags" class="col-sm-3 col-form-label">
-            Tagi
-          </label>
-          <input type="text" name="tags" formControlName="tagControl">
-          <div>
-            <button (click)="addItem()" class="btn btn-primary">Add item</button>
-          </div>
-        </div>
-        <ul class="badges">
-          <li *ngFor="let item of tags.value">
-            <span class="badge badge-primary">{{item}}</span>
-          </li>
-        </ul>
-        <div class="form-group row">
-          <label class="col-sm-3 col-form-label" for="additionalOptions">
-            Opcje dodatkowe
-          </label>
-          <div class="col-sm-9">
-            <input class="one-time-transfer-checkbox" formControlName="additionalOptions" id="additionalOptions"
-              type="checkbox">
-            <span>Wyślij e-mail z potwierdzeniem przelewu</span>
-          </div>
-        </div>
-        <app-buttons (showed)="onShowed()" [transferForm]="transferForm"></app-buttons>
       </div>
     </div>
   </form>
