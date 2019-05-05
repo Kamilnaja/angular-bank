@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {TransferComponent} from './transfer.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TransferComponent } from './transfer.component';
 
 export const transferRoutes: Routes = [
   {

@@ -28,7 +28,7 @@ export class OneTimeTransferComponent implements OnInit {
 
   handleSubmit() {
     if (this.transferForm.valid) {
-      console.log(this.transferForm.value);
+      console.log(this.transferForm.value); // todo - http request
     } else {
       this.validateAllFormFields(this.transferForm);
     }
@@ -38,11 +38,11 @@ export class OneTimeTransferComponent implements OnInit {
     Object.keys(form.controls).forEach(field => {
       const control = form.get(field);
       if (control instanceof FormControl) {
-        control.markAsTouched({ onlySelf: true })
+        control.markAsTouched({ onlySelf: true });
       } else if (control instanceof FormGroup) {
         this.validateAllFormFields(control);
       }
-    })
+    });
   }
 
   onShowed() {
