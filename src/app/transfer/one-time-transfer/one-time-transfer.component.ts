@@ -70,10 +70,6 @@ export class OneTimeTransferComponent implements OnInit {
     return this.transferForm.get('options');
   }
 
-  get pesel() {
-    return this.transferForm.get('pesel');
-  }
-
   get tags(): FormArray {
     return this.transferForm.get('tags') as FormArray;
   }
@@ -93,7 +89,6 @@ export class OneTimeTransferComponent implements OnInit {
         value: ['', Validators.required],
         currency: ['PLN', Validators.required]
       }),
-      pesel: ['', Validators.required],
       transferTitle: ['a', Validators.required],
       realizationDate: ['', DateValidator.ptDate],
       additionalOptions: ['a'],
