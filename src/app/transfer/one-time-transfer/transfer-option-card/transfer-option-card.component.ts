@@ -8,7 +8,6 @@ import {Transfer} from '../../../interfaces/Transfer.interface';
   styleUrls: ['./transfer-option-card.component.css']
 })
 export class TransferOptionCardComponent {
-  @Input() transfer: Transfer;
+  @Input() transfer: FormGroup;
   @Input() options: FormGroup;
-
 }

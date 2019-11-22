@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DesktopComponent } from './desktop.component';
+import { AccountFormComponent } from '../account-form/account-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { AccountFormService } from '../account-form/account-form.service';
 
 describe('DesktopComponent', () => {
   let component: DesktopComponent;
@@ -8,9 +11,11 @@ describe('DesktopComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DesktopComponent ]
-    })
-    .compileComponents();
+      declarations: [DesktopComponent],
+      imports: [ReactiveFormsModule],
+      providers: [],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

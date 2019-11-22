@@ -1,15 +1,20 @@
-<label>
-  <div class="d-flex transfer-option-card">
-    <div [formGroup]="options" class="checkbox-wrapper">
-      <input [value]="transfer.value" class="one-time-transfer-checkbox" formControlName="kind" name="kind"
-             type="radio"
-             [checked]="this.options.controls.kind.value == transfer.value"
-      >
+<form [formGroup]="options">
+  <label>
+    <div class="d-flex transfer-option-card">
+      <div class="checkbox-wrapper">
+        <input
+          [value]="transfer.value"
+          class="one-time-transfer-checkbox"
+          formControlName="kind"
+          name="kind"
+          type="radio"
+        />
+      </div>
+      <div class="transfer-option-wrapper">
+        <p class="transfer-option-title">{{ transfer.title }}</p>
+        <p class="transfer-option-data">{{ transfer.data }}</p>
+        <p class="transfer-option-price">{{ transfer.price }}</p>
+      </div>
     </div>
-    <div class="transfer-option-wrapper">
-      <p class="transfer-option-title">{{transfer.title}}</p>
-      <p class="transfer-option-data">{{transfer.data}}</p>
-      <p class="transfer-option-price">{{transfer.price}}</p>
-    </div>
-  </div>
-</label>
+  </label>
+</form>

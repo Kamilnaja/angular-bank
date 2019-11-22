@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Account } from './account.model';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class AccountFormService {
@@ -10,6 +11,10 @@ export class AccountFormService {
 
   public set accounts(value: Account[]) {
     this._accounts = value;
+  }
+
+  public get singleAccount(): Observable<string> {
+    return of(this._singleAccount);
   }
 
   private _accounts: Account[] = [
@@ -24,6 +29,8 @@ export class AccountFormService {
       account: '36123011968614604782053668'
     }
   ];
+
+  private _singleAccount = '36123011968614604782053668';
 
   constructor() { }
 }

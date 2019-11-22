@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {OneTimeTransferComponent} from './one-time-transfer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('OneTimeTransferComponent', () => {
   let component: OneTimeTransferComponent;
@@ -14,7 +15,8 @@ describe('OneTimeTransferComponent', () => {
       imports: [
         ReactiveFormsModule,
         FormsModule
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));

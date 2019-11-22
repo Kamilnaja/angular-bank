@@ -93,6 +93,7 @@ export class OneTimeTransferComponent implements OnInit {
       realizationDate: ['', DateValidator.ptDate],
       additionalOptions: ['a'],
       tagControl: [],
+
       options: this.fb.group({
         kind: ['a', Validators.required]
       })

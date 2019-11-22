@@ -1,12 +1,12 @@
 <h2>Please fill this form</h2>
-<form>
+<form [formGroup]="formGroup">
   <label>Payment account
-    <input>
+    <input [formControlName]="'paymentAccount'">
   </label>
   <label>Additional account
-    <input>
+    <input [formControlName]="'additionalAccount'">
   </label>
   <label>Repayment account
-    <input>
+    <input [formControlName]="'repaymentAccount'">
   </label>
 </form>
