@@ -10,6 +10,7 @@ import {ThanksScreenComponent} from './thanks-screen/thanks-screen.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AccountFormComponent } from './account-form/account-form.component';
 import { AccountFormService } from './account-form/account-form.service';
+import { AccountFormResolver } from './resolvers/AccontFormResolver';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { AccountFormService } from './account-form/account-form.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AccountFormService],
+  providers: [AccountFormService, AccountFormResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {
