@@ -1,5 +1,5 @@
 import { convertToParamMap, ParamMap, Params } from '@angular/router';
-import { ReplaySubject, of, Observable } from 'rxjs';
+import { of, ReplaySubject } from 'rxjs';
 
 export class ActivatedRouteStub {
   constructor(initialParams?: Params) {
@@ -9,7 +9,7 @@ export class ActivatedRouteStub {
   public params: any;
   private subject = new ReplaySubject<ParamMap>();
   public data = of({
-    account: 'hello'
+    account: 'hello',
   });
   public snapshot = {
     data: {},

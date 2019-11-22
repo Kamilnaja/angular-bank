@@ -1,13 +1,13 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AccountFormComponent } from './account-form.component';
 import { ActivatedRouteStub } from './activatedServiceStub.component';
-import { of } from 'rxjs';
 
 describe('AccountFormComponent', () => {
   let component: AccountFormComponent;
-  let fixture: any; // todo - remove any
+
+  let fixture: ComponentFixture<AccountFormComponent>;
   let activatedRoute: ActivatedRouteStub;
 
   beforeEach(() => {
