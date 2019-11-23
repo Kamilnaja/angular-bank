@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { startWith } from 'rxjs/operators';
 import { AccountsPayload } from './models/accountsPayload.model';
 import { untilDestroyed } from 'ngx-take-until-destroy';
+import { isNil } from 'lodash';
 
 @Component({
   selector: 'app-account-form',
@@ -38,13 +39,23 @@ export class AccountFormComponent implements OnInit, OnDestroy {
   private watchPaymentAccountchanges() {
     this.paymentAccount.valueChanges
       .pipe(startWith(this.paymentAccount.value), untilDestroyed(this))
-      .subscribe((item: Account) => {
+      .subscribe((item: string | number) => {
         if (
-          this.repaymentAccount.value === undefined ||
-          this.repaymentAccount.value === '' ||
-          this.repaymentAccount.value === null
+          isNil(this.repaymentAccount.value) ||
+          this.repaymentAccount.value === ''
         ) {
           this.repaymentAccount.setValue(item);
+        }
+
+        if (
+          (item || (item === 0)) &&
+          !this.additionalAccount.value &&
+          this.additionalAccount.value !== 0
+        ) {
+          this.additionalAccount.disable();
+        }
+        if (item === 'select') {
+          this.additionalAccount.enable();
         }
       });
   }

@@ -64,9 +64,7 @@ describe('AccountFormComponent', () => {
     // now repayment is not empty, retry
     component.paymentAccount.setValue(2, {emitEvent: true});
     expect(component.repaymentAccount.value).toBe(1);
-  });
 
-  it('when the payment account is given from backend, other bank account field should be readonly', () => {
     activatedRoute = new ActivatedRouteStub({
       id: 1,
       account: '',
@@ -74,10 +72,17 @@ describe('AccountFormComponent', () => {
     });
   });
 
+  it('when the payment account is given from backend, other bank account field should be readonly', () => {
+    component.ngOnInit();
+    expect(component.additionalAccount.value).toBe('');
+    expect(component.additionalAccount.disabled).toBe(true);
+  });
+
   it('when paymentAccount have value from backend, set value for repayment', () => {
     component.ngOnInit();
     expect(component.paymentAccount.value).toBe(1);
     expect(component.repaymentAccount.value).toBe(1);
+    expect(component.additionalAccount.disabled).toBeTruthy();
     activatedRoute = new ActivatedRouteStub({
       id: null,
       account: '',
@@ -89,5 +94,14 @@ describe('AccountFormComponent', () => {
     component.ngOnInit();
     expect(component.paymentAccount.value).toBe(null);
     expect(component.repaymentAccount.value).toBe(null);
+    expect(component.additionalAccount.disabled).toBeFalsy();
   });
+
+  it('when paymentAccount have value "submit", enable other account form ', () => {
+    component.ngOnInit();
+    component.paymentAccount.setValue('select');
+    expect(component.additionalAccount.disabled).toBeFalsy();
+  });
+
+
 });

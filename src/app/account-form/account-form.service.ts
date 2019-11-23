@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AccountsPayload } from './models/accountsPayload.model';
+import { Account } from './models/account.model';
 
 @Injectable()
 export class AccountFormService {
@@ -8,13 +9,13 @@ export class AccountFormService {
     return of(this._accounts);
   }
   // todo - move to json file
-  private selected = {
+  private selected: Account = {
     name: 'abandoned',
     id: 1,
     account: '888999888999',
   };
 
-  private all = [
+  private all: Account[] = [
     {
       name: 'hello',
       id: 0,

@@ -4,6 +4,7 @@
     <label>
       Payment account
       <select formControlName="paymentAccount">
+        <option [value]='"select"'>Select</option>
         <option *ngFor="let item of allAccounts" [value]="item.id">
           {{ item.id }} {{ item.name }}
         </option>
