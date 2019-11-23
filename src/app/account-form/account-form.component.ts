@@ -31,11 +31,11 @@ export class AccountFormComponent implements OnInit {
 
   getInitialData(): void {
     this.route.data.subscribe(data => {
-      this.setInitialFormValues(data.account);
+      this.setInitialFormValues(data.accounts.selectedAccount.id);
     });
   }
 
-  private setInitialFormValues(data: any): void {
+  private setInitialFormValues(data: number): void {
     this.paymentAccount.setValue(data);
   }
 

@@ -14,7 +14,7 @@ export const routes: Routes = [
         path: 'pulpit',
         component: DesktopComponent,
         resolve: {
-          account: AccountFormResolver
+          accounts: AccountFormResolver
         }
     },
     {

@@ -6,7 +6,6 @@ import { ActivatedRouteStub } from './activatedServiceStub.component';
 
 describe('AccountFormComponent', () => {
   let component: AccountFormComponent;
-
   let fixture: ComponentFixture<AccountFormComponent>;
   let activatedRoute: ActivatedRouteStub;
 
@@ -23,6 +22,7 @@ describe('AccountFormComponent', () => {
     }).compileComponents();
 
     activatedRoute = new ActivatedRouteStub();
+
     fixture = TestBed.createComponent(AccountFormComponent);
     component = fixture.componentInstance;
   });
@@ -33,6 +33,6 @@ describe('AccountFormComponent', () => {
   it('should have initialized form with given values', async () => {
     component.ngOnInit();
     expect(component.paymentAccount.value).toBeDefined();
-    expect(component.paymentAccount.value).toBe('hello');
+    expect(component.paymentAccount.value).toBe(1);
   });
 });

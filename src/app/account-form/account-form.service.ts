@@ -1,36 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Account } from './account.model';
 import { Observable, of } from 'rxjs';
+import { AccountsPayload } from './models/accountsPayload.model';
 
 @Injectable()
 export class AccountFormService {
-
-  public get accounts(): Account[] {
-    return this._accounts;
+  public get accounts(): Observable<AccountsPayload> {
+    return of(this._accounts);
   }
-
-  public set accounts(value: Account[]) {
-    this._accounts = value;
-  }
-
-  public get singleAccount(): Observable<string> {
-    return of(this._singleAccount);
-  }
-
-  private _accounts: Account[] = [
-    {
-      name: 'hello',
-      id: 1,
-      account: '36124011968614604782052557'
+  // todo - move to json file
+  private _accounts: AccountsPayload = {
+    allAccounts: [
+      {
+        name: 'hello',
+        id: 1,
+        account: '36124011968614604782052557',
+      },
+      {
+        name: 'world',
+        id: 2,
+        account: '36123011968614604782053668',
+      },
+      {
+        name: 'abandoned',
+        id: 3,
+        account: '888999888999',
+      },
+    ],
+    selectedAccount: {
+      name: 'abandoned',
+      id: 3,
+      account: '888999888999',
     },
-    {
-      name: 'world',
-      id: 2,
-      account: '36123011968614604782053668'
-    }
-  ];
-
-  private _singleAccount = '36123011968614604782053668';
-
-  constructor() { }
+  };
+  constructor() {}
 }
