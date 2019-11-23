@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { AccountsPayload } from './models/accountsPayload.model';
 
 @Component({
   selector: 'app-account-form',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AccountFormComponent implements OnInit {
   public formGroup: FormGroup;
+  public allAccounts: AccountsPayload;
 
   public get paymentAccount(): FormControl {
     return this.formGroup.get('paymentAccount') as FormControl;
@@ -32,11 +34,12 @@ export class AccountFormComponent implements OnInit {
   getInitialData(): void {
     this.route.data.subscribe(data => {
       this.setInitialFormValues(data.accounts.selectedAccount.id);
+      this.allAccounts = data.accounts.allAccounts;
     });
   }
 
-  private setInitialFormValues(data: number): void {
-    this.paymentAccount.setValue(data);
+  private setInitialFormValues(initialFormId: number): void {
+    this.paymentAccount.setValue(initialFormId);
   }
 
   private buildFormGroup(): void {

@@ -1,12 +1,26 @@
 <h2>Please fill this form</h2>
+{{paymentAccount.value}}
 <form [formGroup]="formGroup">
-  <label>Payment account
-    <input [formControlName]="'paymentAccount'">
-  </label>
-  <label>Additional account
-    <input [formControlName]="'additionalAccount'">
-  </label>
-  <label>Repayment account
-    <input [formControlName]="'repaymentAccount'">
-  </label>
+  <div>
+    <label>
+      Payment account
+      <select formControlName="paymentAccount">
+        <option *ngFor="let item of allAccounts" [value]="item.id">
+          {{ item.id }} {{ item.name }}
+        </option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      Additional account
+      <input [formControlName]="'additionalAccount'" />
+    </label>
+  </div>
+  <div>
+    <label
+      >Repayment account
+      <input [formControlName]="'repaymentAccount'" />
+    </label>
+  </div>
 </form>
