@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AccountFormComponent } from './account-form.component';
 import { ActivatedRouteStub } from './activatedServiceStub';
+import { ComponentFixtureAutoDetect } from '@angular/core/testing';
 
 describe('AccountFormComponent', () => {
   let component: AccountFormComponent;
@@ -18,12 +19,15 @@ describe('AccountFormComponent', () => {
           provide: ActivatedRoute,
           useValue: activatedRoute,
         },
+        {
+          provide: ComponentFixtureAutoDetect,
+          useValue: true,
+        },
       ],
     }).compileComponents();
     fixture = TestBed.createComponent(AccountFormComponent);
     component = fixture.componentInstance;
   });
-
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -54,12 +58,12 @@ describe('AccountFormComponent', () => {
     component.ngOnInit();
     expect(component.paymentAccount.value).toBeFalsy();
     expect(component.repaymentAccount.value).toBeFalsy();
-    component.paymentAccount.setValue(1);
+    component.paymentAccount.setValue(1, { emitEvent: true });
     fixture.detectChanges();
-    console.log(JSON.stringify(component.formGroup.value));
-
-    // expect(component.repaymentAccount.value).toBe(1);
-
+    expect(component.repaymentAccount.value).toBe(1);
+    // now repayment is not empty, retry
+    component.paymentAccount.setValue(2, {emitEvent: true});
+    expect(component.repaymentAccount.value).toBe(1);
   });
 
   it('when the payment account is given from backend, other bank account field should be readonly', () => {
@@ -74,5 +78,16 @@ describe('AccountFormComponent', () => {
     component.ngOnInit();
     expect(component.paymentAccount.value).toBe(1);
     expect(component.repaymentAccount.value).toBe(1);
-  })
+    activatedRoute = new ActivatedRouteStub({
+      id: null,
+      account: '',
+      name: '',
+    });
+  });
+
+  it('when paymentAccount do not have value from backend, do not set initial value for repayment', () => {
+    component.ngOnInit();
+    expect(component.paymentAccount.value).toBe(null);
+    expect(component.repaymentAccount.value).toBe(null);
+  });
 });

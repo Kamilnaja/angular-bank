@@ -27,15 +27,13 @@ export class AccountFormComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup;
   public allAccounts: AccountsPayload;
 
-  ngOnDestroy(): void {
-    console.log('destroying');
-  }
-
   ngOnInit(): void {
     this.buildFormGroup();
     this.getInitialData();
     this.watchPaymentAccountchanges();
   }
+
+  ngOnDestroy(): void {}
 
   private watchPaymentAccountchanges() {
     this.paymentAccount.valueChanges
@@ -43,7 +41,8 @@ export class AccountFormComponent implements OnInit, OnDestroy {
       .subscribe((item: Account) => {
         if (
           this.repaymentAccount.value === undefined ||
-          this.repaymentAccount.value === ''
+          this.repaymentAccount.value === '' ||
+          this.repaymentAccount.value === null
         ) {
           this.repaymentAccount.setValue(item);
         }
