@@ -1,5 +1,4 @@
 <h2>Please fill this form</h2>
-{{paymentAccount.value}}
 <form [formGroup]="formGroup">
   <div>
     <label>
@@ -20,7 +19,11 @@
   <div>
     <label
       >Repayment account
-      <input [formControlName]="'repaymentAccount'" />
+      <select formControlName="repaymentAccount">
+          <option *ngFor="let item of allAccounts" [value]="item.id">
+            {{ item.id }} {{ item.name }}
+          </option>
+        </select>
     </label>
   </div>
 </form>

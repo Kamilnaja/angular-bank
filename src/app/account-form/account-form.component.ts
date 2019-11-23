@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AccountsPayload } from './models/accountsPayload.model';
+import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-account-form',
@@ -29,17 +30,28 @@ export class AccountFormComponent implements OnInit {
   ngOnInit(): void {
     this.buildFormGroup();
     this.getInitialData();
+    this.watchPaymentAccountchanges();
   }
 
-  getInitialData(): void {
+  private watchPaymentAccountchanges() {
+    this.paymentAccount.valueChanges
+    .pipe(startWith(this.paymentAccount.value))
+    .subscribe((item: Account) => {
+      if (this.repaymentAccount.value === undefined || this.repaymentAccount.value === '') {
+        this.repaymentAccount.setValue(item);
+      }
+    });
+  }
+
+  private getInitialData(): void {
     this.route.data.subscribe(data => {
       this.setInitialFormValues(data.accounts.selectedAccount.id);
       this.allAccounts = data.accounts.allAccounts;
     });
   }
 
-  private setInitialFormValues(initialFormId: number): void {
-    this.paymentAccount.setValue(initialFormId);
+  private setInitialFormValues(selectedAccountId: number): void {
+    this.paymentAccount.setValue(selectedAccountId);
   }
 
   private buildFormGroup(): void {
