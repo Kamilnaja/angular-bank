@@ -8,8 +8,16 @@ export class AccountFormService {
   public get accounts(): Observable<AccountsPayload> {
     return of(this._accounts);
   }
-  // todo - move to json file
+
   private selected: Account = {
+    name: 'abandoned',
+    id: 1,
+    account: '888999888999',
+  };
+
+  private additionalAccount = null;
+
+  private selectedRepaymentAccount: Account = {
     name: 'abandoned',
     id: 1,
     account: '888999888999',
@@ -22,7 +30,6 @@ export class AccountFormService {
       account: '36124011968614604782052557',
     },
     {
-
       name: 'world',
       id: 1,
       account: '36123011968614604782053668',
@@ -36,7 +43,9 @@ export class AccountFormService {
 
   private _accounts: AccountsPayload = {
     allAccounts: this.all,
-    selectedAccount: this.selected
+    selectedAccount: this.selected,
+    additionalAccount: this.additionalAccount,
+    selectedRepaymentAccount: this.selectedRepaymentAccount,
   };
   constructor() {}
 }

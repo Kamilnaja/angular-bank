@@ -41,8 +41,8 @@ export class AccountFormComponent implements OnInit, OnDestroy {
       .pipe(startWith(this.paymentAccount.value), untilDestroyed(this))
       .subscribe((item: string | number) => {
         if (
-          isNil(this.repaymentAccount.value) ||
-          this.repaymentAccount.value === ''
+          (isNil(this.repaymentAccount.value) ||
+          this.repaymentAccount.value === '') && !isNil(this.paymentAccount)
         ) {
           this.repaymentAccount.setValue(item);
         }
@@ -64,6 +64,11 @@ export class AccountFormComponent implements OnInit, OnDestroy {
     this.route.data.pipe(untilDestroyed(this)).subscribe(data => {
       this.setInitialFormValues(data.accounts.selectedAccount.id);
       this.allAccounts = data.accounts.allAccounts;
+      this.additionalAccount.setValue(data.accounts.additionalAccount);
+      if (!isNil(this.additionalAccount.value) ) {
+        this.paymentAccount.setValue('');
+        this.paymentAccount.disable();
+      }
     });
   }
 

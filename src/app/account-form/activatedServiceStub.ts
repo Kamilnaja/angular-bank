@@ -1,12 +1,15 @@
-import { convertToParamMap, ParamMap, Params } from '@angular/router';
-import { of, ReplaySubject } from 'rxjs';
-import { AccountsPayload } from './models/accountsPayload.model';
+import { of } from 'rxjs';
 import { Account } from './models/account.model';
+import { AccountsPayload } from './models/accountsPayload.model';
 
 export class ActivatedRouteStub {
   public selectedAccount: Account;
-  constructor(account: Account) {
+  public additionalAccount: string;
+  public selectedRepaymentAccount: Account;
+  constructor(account: Account, additionalAccount: string) {
     this.accounts.selectedAccount = account;
+    this.accounts.additionalAccount = additionalAccount;
+    this.accounts.selectedRepaymentAccount = this.selectedRepaymentAccount;
   }
 
   private allAccounts: Account[] = [
@@ -30,15 +33,11 @@ export class ActivatedRouteStub {
   public accounts: AccountsPayload = {
     selectedAccount: this.selectedAccount,
     allAccounts: this.allAccounts,
+    additionalAccount: this.additionalAccount,
+    selectedRepaymentAccount: this.selectedRepaymentAccount,
   };
-
-  private subject = new ReplaySubject<ParamMap>();
 
   public data = of({
     accounts: this.accounts,
   });
-
-  setParamsMap(initialParams?: Params) {
-    this.subject.next(convertToParamMap(initialParams));
-  }
 }
