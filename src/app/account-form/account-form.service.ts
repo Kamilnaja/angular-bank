@@ -15,15 +15,13 @@ export class AccountFormService {
     account: '888999888999',
   };
 
-  private additionalAccount = null;
-
   private selectedRepaymentAccount: Account = {
     name: 'abandoned',
     id: 1,
     account: '888999888999',
   };
 
-  private all: Account[] = [
+  private allAccounts: Account[] = [
     {
       name: 'hello',
       id: 0,
@@ -42,10 +40,13 @@ export class AccountFormService {
   ];
 
   private _accounts: AccountsPayload = {
-    allAccounts: this.all,
-    selectedAccount: this.selected,
-    additionalAccount: this.additionalAccount,
+    allAccounts: this.allAccounts,
+    selectedAccount: {
+      name: 'abandoned',
+      id: 1,
+      account: '888999888999',
+    },
+    additionalAccount: '666',
     selectedRepaymentAccount: this.selectedRepaymentAccount,
   };
-  constructor() {}
 }
