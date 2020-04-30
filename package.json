@@ -22,7 +22,7 @@
     "ajv": "^6.10.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.10",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "ngx-take-until-destroy": "^5.4.0",
     "popper.js": "^1.16.0",
